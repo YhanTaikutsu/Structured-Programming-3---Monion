@@ -1,0 +1,28 @@
+public class Main 
+{
+    public static void main(String[] args) 
+	{
+
+        double centimeters = 275.5;
+ 
+        int meters = (int) (centimeters / 100);
+
+        double remainingCm = centimeters - (meters * 100);
+
+        System.out.println("UNIT CASTING CONVERTER");
+        System.out.println("Total Centimeters: " + centimeters);
+        System.out.println("Whole Meters: " + meters);
+        System.out.println("Remaining Centimeters: " + remainingCm);
+
+        int number = 25;
+        double widenedNumber = number;
+
+        System.out.println("Implicit Widening: " + widenedNumber);
+
+        double decimalValue = 12.75;
+        int narrowedValue = (int) decimalValue;
+
+        System.out.println("Original Double: " + decimalValue);
+        System.out.println("Narrowed Integer: " + narrowedValue);
+    }
+}
