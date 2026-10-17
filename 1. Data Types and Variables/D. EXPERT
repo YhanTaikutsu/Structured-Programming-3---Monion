@@ -1,0 +1,37 @@
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        byte number = 127;
+
+        System.out.println("BYTE OVERFLOW");
+        System.out.println("Before Increment: " + number);
+
+        number++;
+
+        System.out.println("After Increment: " + number);
+
+        String str1 = new String("Java");
+        String str2 = new String("Java");
+        String str3 = "Java";
+
+        System.out.println("\nSTRING COMPARISON");
+        System.out.println("str1 == str2: " + (str1 == str2));
+        System.out.println("str1.equals(str2): " + str1.equals(str2));
+        System.out.println("str1 == str3: " + (str1 == str3));
+        System.out.println("str1.equals(str3): " + str1.equals(str3));
+        System.out.println("str2 == str3: " + (str2 == str3));
+        System.out.println("str2.equals(str3): " + str2.equals(str3));
+
+        int[] array1 = {10, 20, 30};
+        int[] array2 = array1;
+
+        System.out.println("\nSHARED ARRAY REFERENCE");
+        System.out.println("Before Modification: " + array2[0]);
+
+        array1[0] = 99;
+
+        System.out.println("After Modification through array1: " + array2[0]);
+
+    }
+}
