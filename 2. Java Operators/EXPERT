@@ -1,0 +1,18 @@
+public class Main {
+
+    public static void main(String[] args)  
+  {
+        int a = 5;
+        int b = 3;
+        int count = 2;
+
+        // PREDICTED: true
+        System.out.println((a + b * 2 > 10) && (b < 5));
+
+        // PREDICTED: 3
+        System.out.println(count++ + 1);
+
+        // PREDICTED: true
+        System.out.println((a > b) || (++count == 5));
+    }
+}
