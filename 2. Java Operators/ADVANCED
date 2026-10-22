@@ -1,0 +1,24 @@
+public class Main {
+    public static void main(String[] args) 
+    {
+        
+        double balance = 1000.00;
+
+        System.out.println("Starting Balance: " + balance);
+
+        balance += 200;
+        System.out.println("After adding 200: " + balance);
+
+        balance *= 1.10;
+        System.out.println("After 10% growth: " + balance);
+
+        balance += 100;
+        System.out.println("After adding 100: " + balance);
+
+        balance *= 1.05;
+        System.out.println("After 5% growth: " + balance);
+
+        int count = 5;
+
+    }
+}
