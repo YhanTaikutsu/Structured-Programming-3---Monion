@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter purchase amount: ");
+        double purchaseAmount = input.nextDouble();
+
+        double discount;
+        String tier;
+
+        if (purchaseAmount < 1000) {
+            discount = 0;
+            tier = "No Discount";
+        } else if (purchaseAmount < 2000) {
+            discount = 5;
+            tier = "5% Discount";
+        } else if (purchaseAmount < 5000) {
+            discount = 10;
+            tier = "10% Discount";
+        } else {
+            discount = 15;
+            tier = "15% Discount";
+        }
+
+        double discountedPrice = purchaseAmount - (purchaseAmount * discount / 100);
+
+        System.out.println("Discount Tier: " + tier);
+        System.out.println("Discount: " + discount + "%");
+        System.out.println("Final Price: " + discountedPrice);
+
+        input.close();
+    }
+}
