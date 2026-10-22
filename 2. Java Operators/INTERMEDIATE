@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter student's average grade: ");
+        double average = input.nextDouble();
+
+        System.out.print("Enter number of absences: ");
+        int absences = input.nextInt();
+
+        if ((average >= 75 && absences <= 3) || (average >= 90)) {
+            System.out.println("Result: PASS");
+            System.out.println("Reason: The student meets the passing requirements.");
+        } else {
+            System.out.println("Result: FAIL");
+            System.out.println("Reason: The student does not meet the passing requirements.");
+        }
+
+        input.close();
+    }
+}
