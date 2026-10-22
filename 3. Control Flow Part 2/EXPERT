@@ -1,0 +1,110 @@
+import java.util.Scanner;
+
+public class Main {
+    static Scanner input = new Scanner(System.in);
+
+    static int[][] warehouse = {
+        {10, 5, 8},
+        {3, -1, 12},
+        {2, 7, 6}
+    };
+
+    public static void main(String[] args) {
+        int choice;
+
+        do {
+            System.out.println("\n1. Display Inventory");
+            System.out.println("2. Total Inventory");
+            System.out.println("3. Find Critical Shelf");
+            System.out.println("4. Restock Shelf");
+            System.out.println("5. Exit");
+            System.out.print("Enter choice: ");
+            choice = input.nextInt();
+
+            if (choice == 1) {
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        System.out.print(warehouse[i][j] + " ");
+                    }
+                    System.out.println();
+                }
+
+            } else if (choice == 2) {
+                int total = 0;
+
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        if (warehouse[i][j] == -1) {
+                            continue; 
+                        }
+                        total += warehouse[i][j];
+                    }
+                }
+
+                System.out.println("Total Inventory: " + total);
+
+            } else if (choice == 3) {
+                boolean found = false;
+
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 0; j < 3; j++) {
+                        if (warehouse[i][j] != -1 && warehouse[i][j] < 5) {
+                            System.out.println("Critical shelf: Row "
+                                    + (i + 1) + ", Column " + (j + 1));
+                            found = true;
+                            break; 
+                        }
+                    }
+                    if (found) {
+                        break; 
+                    }
+                }
+
+                if (!found) {
+                    System.out.println("No critical shelf found.");
+                }
+
+            } else if (choice == 4) {
+                System.out.print("Enter row (1-3): ");
+                int row = input.nextInt();
+
+                System.out.print("Enter column (1-3): ");
+                int col = input.nextInt();
+
+                if (row < 1 || row > 3 || col < 1 || col > 3) {
+                    System.out.println("Invalid shelf position.");
+                    continue;
+                }
+
+                if (warehouse[row - 1][col - 1] == -1) {
+                    System.out.println("This shelf is damaged.");
+                    continue;
+                }
+
+                System.out.print("Enter quantity to add: ");
+                int amount = input.nextInt();
+
+                while (amount <= 0) {
+                    System.out.print("Enter a positive quantity: ");
+                    amount = input.nextInt();
+                }
+
+                warehouse[row - 1][col - 1] += amount;
+                System.out.println("Restocking successful!");
+
+            } else if (choice == 5) {
+                System.out.println("Goodbye!");
+
+            } else {
+                System.out.println("Invalid choice.");
+            }
+
+        } while (choice != 5);
+
+        input.close();
+    }
+
+    static void exampleReturn() {
+        return;
+    }
+}
