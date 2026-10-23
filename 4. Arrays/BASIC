@@ -1,0 +1,21 @@
+public class Main {
+    public static void main(String[] args) 
+    {
+
+        String[] favorites = {
+            "Sleeping",
+            "Watching Tinola Mukbang",
+            "Eating Dinuguan na may halong ice cream",
+            "Traveling at Tondo at 3 AM",
+            "Playing Kamoteng Rider Simulator"
+        };
+
+        System.out.println("MY 5 FAVORITE THINGS:");
+
+        for (int i = 0; i < favorites.length; i++) {
+            System.out.println((i + 1) + ". " + favorites[i]);
+        }
+
+        System.out.println("\nTotal number of favorites: " + favorites.length);
+  }
+}
